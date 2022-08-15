@@ -1,0 +1,415 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+/* GOOGLE FONTS */
+/* LOCAL FONTS */
+@font-face {
+  font-family: Integral CF;
+  src: url(./../fonts/IntegralCF-Medium.otf);
+}
+/* LOCAL FONTS */
+/* DEFAULT OVERWRITING */
+:root {
+  font-size: 16px;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+p {
+  font-weight: 500;
+  line-height: 1.5em;
+}
+
+button {
+  border: none;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 18px;
+  transition: transform 0.25s ease-in-out;
+  cursor: pointer;
+}
+button:hover {
+  transform: scale(1.05);
+}
+button p {
+  font-family: "Integral CF", "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+  font-size: 14px;
+}
+
+/* DEFAULT OVERWRITING */
+/*BODY STYLING*/
+body {
+  background-image: url(./../images/backgrounds/hero_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+}
+
+/*BODY STYLING*/
+/* NAV STYLING */
+nav {
+  height: 100px;
+  width: 100vw;
+  z-index: 99999;
+}
+nav * {
+  color: white;
+}
+nav .navContent {
+  width: calc(100% - 160px);
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+nav .navContent .navContent_element {
+  display: flex;
+  align-items: center;
+}
+nav .navContent .nc_left {
+  justify-content: left;
+}
+nav .navContent .nc_left ul.ncl_siteAnchors {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+nav .navContent .nc_left ul.ncl_siteAnchors li.siteAnchor a.siteAnchorLink {
+  display: inline-block;
+  position: relative;
+  color: #abbeff;
+  transition: all 0.25s ease-in-out;
+  white-space: nowrap;
+}
+nav .navContent .nc_left ul.ncl_siteAnchors li.siteAnchor a.siteAnchorLink::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1.5px;
+  background: white;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -4px;
+}
+nav .navContent .nc_left ul.ncl_siteAnchors li.siteAnchor a.siteAnchorLink:hover {
+  color: white;
+}
+nav .navContent .nc_left ul.ncl_siteAnchors li.siteAnchor a.siteAnchorLink:hover::after {
+  width: 100%;
+}
+nav .navContent .nc_left ul.ncl_siteAnchors li.siteAnchor a.siteAnchorLink:is(:active, :link, :focus).active {
+  color: white !important;
+}
+nav .navContent .nc_left ul.ncl_siteAnchors li.siteAnchor a.siteAnchorLink:is(:active, :link, :focus).active::after {
+  width: 100%;
+}
+nav .navContent .nc_left ul.ncl_siteAnchors li.siteAnchor {
+  margin-right: 24px;
+}
+nav .navContent .nc_center {
+  justify-content: center;
+}
+nav .navContent .nc_center .ncc_logo {
+  height: 28px;
+}
+nav .navContent .nc_right {
+  justify-content: right;
+}
+nav .navContent .nc_right ul.ncr_socialLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+nav .navContent .nc_right ul.ncr_socialLinks li.socialLink {
+  display: flex;
+  align-items: center;
+}
+nav .navContent .nc_right ul.ncr_socialLinks li.socialLink a.socialLink {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+nav .navContent .nc_right ul.ncr_socialLinks li.socialLink a.socialLink img.socialIcons {
+  height: 28px;
+}
+nav .navContent .nc_right ul.ncr_socialLinks li.socialLink a.socialLink:hover {
+  transform: scale(1.25, 1.25);
+}
+nav .navContent .nc_right ul.ncr_socialLinks li.socialLink:not(:last-child) {
+  margin-right: 16px;
+}
+nav.scrollNav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-bottom: 1.5px solid #f6f6f6;
+}
+nav.scrollNav * {
+  color: black;
+}
+nav.scrollNav .navContent .nc_left .ncl_siteAnchors .siteAnchor a.siteAnchorLink {
+  color: black;
+}
+nav.scrollNav .navContent .nc_left .ncl_siteAnchors .siteAnchor a.siteAnchorLink::after {
+  background-color: black;
+}
+nav.scrollNav .navContent .nc_center img.ncc_logo {
+  content: url(./../images/logos/Asheemstha\ Logo\ Dark.svg);
+}
+nav.scrollNav .navContent .nc_right ul.ncr_socialLinks li.socialLink a.socialLink img.githubIcon {
+  content: url(./../images/icons/bxl-github\ DARK.svg);
+}
+nav.scrollNav .navContent .nc_right ul.ncr_socialLinks li.socialLink a.socialLink img.instaIcon {
+  content: url(./../images/icons/bxl-instagram-alt\ DARK.svg);
+}
+nav.scrollNav .navContent .nc_right ul.ncr_socialLinks li.socialLink a.socialLink img.facebookIcon {
+  content: url(./../images/icons/bxl-facebook-circle\ DARK.svg);
+}
+
+/* NAV STYLING */
+/* HERO SECTION STYLING*/
+section#heroSection {
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section#heroSection .heroSection_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section#heroSection .heroSection_content .hs_image {
+  border: 1.5px solid #577dff;
+  padding: 16px;
+  border-radius: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section#heroSection .heroSection_content .hs_image img.mainPortraits {
+  height: 360px;
+  width: 260px;
+  border-radius: 130px;
+  transition: transform 0.5s ease-in-out;
+}
+section#heroSection .heroSection_content .hs_image:hover img.mainPortraits {
+  transform: scale(1.05);
+}
+section#heroSection .heroSection_content .hs_name {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+section#heroSection .heroSection_content .hs_name h1.mainName {
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Integral CF", "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  letter-spacing: 2px;
+}
+section#heroSection .heroSection_content .hs_name p.mainRole {
+  color: #e3e9ff;
+  margin-top: 16px;
+}
+section#heroSection .heroSection_content .hs_buttons {
+  margin-top: 40px;
+  display: flex;
+}
+section#heroSection .heroSection_content .hs_buttons button {
+  width: 160px;
+  border-radius: 24px;
+  padding: 0;
+}
+section#heroSection .heroSection_content .hs_buttons button.resumeDownload {
+  margin-right: 16px;
+}
+section#heroSection .heroSection_content .hs_buttons button.resumeDownload img.downIcon {
+  margin-right: 4px;
+}
+section#heroSection .heroSection_content .hs_buttons button.resumeDownload p.resume {
+  color: #1b47df;
+}
+section#heroSection .heroSection_content .hs_buttons button.contactMe {
+  background-color: #3b67ff;
+}
+section#heroSection .heroSection_content .hs_buttons button.contactMe p {
+  color: white;
+}
+
+/* HERO SECTION STYLING*/
+section#introduction {
+  width: 100vw;
+  background-color: #f6f6f6;
+  padding: 100px 0;
+}
+section#introduction .introduction_content {
+  width: calc(100% - 160px);
+  max-width: 1024px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 80px;
+}
+section#introduction .introduction_content .intro_left h2.il_title {
+  margin-bottom: 40px;
+}
+section#introduction .introduction_content .intro_left p.il_para {
+  line-height: 1.75em;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+section#introduction .introduction_content .intro_left .dateSection .dateLabel {
+  margin-right: 4px;
+  font-weight: 700;
+}
+section#introduction .introduction_content .intro_right h2.ir_title {
+  margin-bottom: 40px;
+}
+section#introduction .introduction_content .intro_right table.basicInfo_table {
+  border: 0;
+}
+section#introduction .introduction_content .intro_right table.basicInfo_table tr {
+  height: 48px;
+  display: flex;
+}
+section#introduction .introduction_content .intro_right table.basicInfo_table tr th {
+  display: flex;
+  justify-content: left;
+  margin-right: 40px;
+  width: 100px;
+  white-space: nowrap;
+}
+
+section#education {
+  padding: 100px 0;
+  width: 100vw;
+}
+section#education .education_content {
+  width: calc(100% - 160px);
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+section#education .education_content h2.ec_title {
+  margin-bottom: 80px;
+}
+section#education .education_content table.education_table {
+  border: 24px;
+}
+section#education .education_content table.education_table tr {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+section#education .education_content table.education_table tr th {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 240px;
+  padding: 24px 40px;
+  border-radius: 8px;
+  background-color: #1b47df;
+}
+section#education .education_content table.education_table tr th .educationDuration {
+  font-size: 0.8em;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: white;
+}
+section#education .education_content table.education_table tr th .educationProgram {
+  font-weight: 600;
+  color: white;
+}
+section#education .education_content table.education_table tr td {
+  padding: 0 0 0 80px;
+}
+section#education .education_content table.education_table tr td h3.td_title {
+  white-space: nowrap;
+  margin-bottom: 8px;
+}
+section#education .education_content table.education_table tr td .educationInstitution {
+  font-size: 1em;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+@media only screen and (max-width: 1280px) {
+  nav .navContent {
+    grid-template-columns: 1fr 1fr;
+  }
+  nav .navContent .nc_left {
+    display: none;
+  }
+  nav .navContent .nc_center {
+    justify-content: left;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  nav.scrollNav {
+    top: 0;
+  }
+  nav .navContent {
+    width: calc(100vw - 80px);
+  }
+  section#introduction .introduction_content {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 80px);
+    grid-gap: 40px;
+  }
+  section#education .education_content table.education_table tr {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    justify-content: center;
+  }
+  section#education .education_content table.education_table tr th {
+    margin: 0;
+    margin-bottom: 40px;
+    color: red;
+  }
+  section#education .education_content table.education_table tr td {
+    padding: 0;
+  }
+  section#education .education_content table.education_table tr td h3 {
+    text-align: center;
+  }
+  section#education .education_content table.education_table tr td p {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 400px) {
+  nav.scrollNav {
+    top: 0;
+  }
+  nav .navContent {
+    width: calc(100vw - 48px);
+  }
+  section#introduction .introduction_content {
+    width: calc(100% - 48px);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
